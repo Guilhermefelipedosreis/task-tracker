@@ -1,0 +1,12 @@
+footer {
+  background-color: aqua;
+}
+
+.container {
+  padding-top: 2em;
+  height: 125px;
+}
+
+.name {
+  text-align: center;
+}
