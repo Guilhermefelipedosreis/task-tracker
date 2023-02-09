@@ -1,8 +1,10 @@
+import { Status } from "./Status";
+
 export interface Task {
-  id?: 0,
-  title: 'title',
-  description: 'something',
-  status: 'todo',
-  commentId: 0,
-  userId: 0
+  id?: number,
+  title: string,
+  description: string,
+  status: Status,
+  commentId?: number,
+  userId?: number
 }

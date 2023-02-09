@@ -4,23 +4,19 @@
   </div>
   <div class="card-group">
 
-
       <div class="card">
         <div class="card-header">
           <h5 class="card-title">To do</h5>
         </div>
         <div class="card-body">
-          <div class="d-grid gap-2">
-            <div *ngIf="task.status === 'todo'">
-              <button class="btn btn-light" type="button">Button</button>
-              <button class="btn btn-light" type="button">Button</button>
+          <div *ngFor="let task of listTask">
+            <div class="d-grid gap-2" *ngIf="checkStatus(task, StatusEnum.TODO)">
+              <button class="btn btn-light" type="button" routerLink="/update-task/{{task.id}}">{{task.title}}</button>
             </div>
-            <button class="btn btn-light" type="button">Button</button>
-            <button class="btn btn-light" type="button">Button</button>
           </div>
         </div>
         <div class="card-footer">
-          <button class="btn btn-secondary" routerLink="/create-task">Add new task</button>
+          <button class="btn btn-secondary" routerLink="/create-task/TODO">Add new task</button>
         </div>
       </div>
 
@@ -29,17 +25,14 @@
           <h5 class="card-title">Doing</h5>
         </div>
         <div class="card-body">
-          <div class="d-grid gap-2">
-            <div *ngIf="task.status === 'todo'">
-              <button class="btn btn-light" type="button">Button</button>
-              <button class="btn btn-light" type="button">Button</button>
+          <div *ngFor="let task of listTask">
+            <div class="d-grid gap-2" *ngIf="checkStatus(task, StatusEnum.DOING)">
+              <button class="btn btn-light" type="button" routerLink="/update-task/{{task.id}}">{{task.title}}</button>
             </div>
-            <button class="btn btn-light" type="button">Button</button>
-            <button class="btn btn-light" type="button">Button</button>
           </div>
         </div>
         <div class="card-footer">
-          <button class="btn btn-secondary" routerLink="/create-task">Add new task</button>
+          <button class="btn btn-secondary" routerLink="/create-task/DOING">Add new task</button>
         </div>
       </div>
 
@@ -48,17 +41,14 @@
           <h5 class="card-title">Done</h5>
         </div>
         <div class="card-body">
-          <div class="d-grid gap-2">
-            <div *ngIf="task.status === 'todo'">
-              <button class="btn btn-light" type="button">Button</button>
-              <button class="btn btn-light" type="button">Button</button>
+          <div *ngFor="let task of listTask">
+            <div class="d-grid gap-2" *ngIf="checkStatus(task, StatusEnum.DONE)">
+              <button class="btn btn-light" type="button" routerLink="/update-task/{{task.id}}">{{task.title}}</button>
             </div>
-            <button class="btn btn-light" type="button">Button</button>
-            <button class="btn btn-light" type="button">Button</button>
           </div>
         </div>
         <div class="card-footer">
-          <button class="btn btn-secondary" routerLink="/create-task">Add new task</button>
+          <button class="btn btn-secondary" routerLink="/create-task/DONE">Add new task</button>
         </div>
       </div>
 

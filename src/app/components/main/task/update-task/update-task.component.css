@@ -1,0 +1,26 @@
+.container {
+  max-width: 800px;
+
+}
+
+.page-header {
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+
+}
+
+.page-content {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+label {
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+
+
+

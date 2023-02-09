@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Status } from '../Status';
 import { Task } from '../task';
+import { TaskService } from '../task.service';
 
 @Component({
   selector: 'app-list-tasks',
@@ -7,20 +9,21 @@ import { Task } from '../task';
   styleUrls: ['./list-tasks.component.css']
 })
 export class ListTasksComponent implements OnInit {
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
 
   listTask: Task[] = [];
 
-  @Input() task: Task = {
-    id: 0,
-    title: 'title',
-    description: 'something',
-    status: 'todo',
-    commentId: 0,
-    userId: 0,
+  constructor (private service: TaskService) {}
 
+  ngOnInit(): void {
+    this.service.list().subscribe((listTask) => {
+      this.listTask = listTask
+    })
+  }
+
+  StatusEnum = Status
+
+  checkStatus(task: Task, status: Status): boolean {
+    return Status[task.status] as unknown === status
   }
 
 }

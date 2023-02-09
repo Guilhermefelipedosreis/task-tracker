@@ -5,6 +5,7 @@ import { SignupComponent } from './components/main/autorization/signup/signup.co
 import { HomeComponent } from './components/main/home/home.component';
 import { CreateTaskComponent } from './components/main/task/create-task/create-task.component';
 import { ListTasksComponent } from './components/main/task/list-task/list-tasks.component';
+import { UpdateTaskComponent } from './components/main/task/update-task/update-task.component';
 
 const routes: Routes = [
   {
@@ -29,8 +30,12 @@ const routes: Routes = [
     component: ListTasksComponent
   },
   {
-    path: 'create-task',
+    path: 'create-task/:status',
     component: CreateTaskComponent
+  },
+  {
+    path: 'update-task/:id',
+    component: UpdateTaskComponent
   }
 ];
 
