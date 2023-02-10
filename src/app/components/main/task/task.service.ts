@@ -9,7 +9,7 @@ import { Task } from './task';
 })
 export class TaskService {
 
-  private API = 'http://localhost:3000/tasks'
+  private API = 'http://localhost:8080/tasks'
 
   constructor(private http: HttpClient) {}
 
@@ -23,7 +23,7 @@ export class TaskService {
 
   update(task: Task):Observable<Task> {
     const url = `${this.API}/${task.id}`
-    return this.http.put<Task>(url, task)
+    return this.http.put<Task>(this.API, task)
   }
 
   delete(task: Task) {

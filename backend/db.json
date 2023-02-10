@@ -129,13 +129,13 @@
     {
       "title": "initialize project with spring boot",
       "description": "start.spring.io",
-      "status": "DOING",
+      "status": "DONE",
       "id": 51
     },
     {
       "title": "develop task controller",
       "description": "",
-      "status": "TODO",
+      "status": "DOING",
       "id": 52
     },
     {
